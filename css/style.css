@@ -1,0 +1,41 @@
+/**選用字形 --> 思源宋體*/
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Nunito:ital@0;1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Lexend', sans-serif;
+}
+
+
+:root {
+    --bg-color: #F5F5F5;
+    --text-color: #121212;
+    --main-color: #F9DBBB;
+    --white-color: #fdfdfd;
+    --key-color:#F05454;
+    --shadow-color: rgb(0,0,0,.2);
+}
+
+
+.dark-mode{
+    --bg-color:#0b061f;
+    --test-color:#fdfdfd;
+    --shadow-color: rgb(0,0,0,.7);
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
