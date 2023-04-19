@@ -98,7 +98,7 @@ body{
 
 .section {
     min-height: 100vh;
-    background: url('images/backgound.jpg') no-repeat;
+    background: url('bg001.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 }
