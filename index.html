@@ -8,187 +8,61 @@
     <link rel="stylesheet" href="css\style.css">
 
 
-    <!--input icon design-->
+    <input icon design>
 
-    <script src="https://kit.fontawesome.com/a3c608bb80.js" crossorigin="anonymous"></script>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo">Logo</a>
-        <nav class="navbar">
-            <button class="btnLogin-popup">Login</button>
-        </nav>
-
+        <div class="mark">
+            <img src="mark.svg">
+          </div>
+        <a href="#" class="logo">選課系統</a>
+    
     </header>
     <section class="section">
-        <div class="wrapper">
-            <span class="icon-close">
-                <i class="fa-solid fa-xmark"></i>
-            </span>
-            <div class="logreg-box">
-                <div class="form-box login">
-                    <div class="logreg-title">
-                        <h2>Login</h2>
-                        <p>Please login to use the platform</p>
-                    </div>
-                    <form action="#">
-                        <div class="input-box">
-                            <span class="icon"><i class="fa-sharp fa-solid fa-graduation-cap"></i></span>
-                            <input type="text" required>
-                            <label>studentID</label>
-                        </div>
-                        <div class="input-box">
-                            <span class="icon"><i class="fa-solid fa-lock"></i></span>
-                            <input type="password" required>
-                            <label>Password</label>
-                        </div>
-
-                        <div class="remember-forget">
-                            <label><input type="checkbox"> Remember me</label>
-                            <a href="#">Forgot password?</a>
-                        </div>
-
-                        <button type="submit" class="btn">Login</button>
-                        <div class="logreg-link">
-                            <p>Dont have an account?<a href="#" class="register-link">Register</a></p>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-
-            <div class="media-options">
-                <a href="#">
-                    <i class="fa-brands fa-google"></i>
-                    <span>Login with Google</span>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-facebook"></i>
-                    <span>Login with Facebook</span>
-                </a>
-            </div>
-        </div>
-
     </section>
 
     <section class="section">
         <div class="checkout_quary">
-            <h2 id="title1" class="selected" onclick="selectTitle(1) ">123</h2>
-            <h2 id="title2" onclick="selectTitle(2)">456</h2>
+            <h2 id="title1" class="selected" onclick="selectTitle(1) ">依開課系所</h2>
+            <h2 id="title2" onclick="selectTitle(2)">依學號查詢</h2>
         </div>
         <div class="choose_label">
             <select name="pets">
-                <option value="">請選擇你最愛的寵物</option>
-                <option value="dog">Dog</option>
-                <option value="cat" selected>Cat</option>
-                <option value="hamster">Hamster</option>
-                <option value="parrot">Parrot</option>
-                <option value="spider" disabled>Spider</option>
-                <option value="goldfish">Goldfish</option>
+                <option value="" selected>學制</option>
+                <option value="dog">大學部</option>
+                <option value="cat">碩士班</option>
+                <option value="hamster">博士班</option>
             </select>
             <select name="pets">
-                <option value="">請選擇你最愛的寵物</option>
-                <option value="dog">Dog</option>
-                <option value="cat" selected>Cat</option>
-                <option value="hamster">Hamster</option>
-                <option value="parrot">Parrot</option>
-                <option value="spider" disabled>Spider</option>
-                <option value="goldfish">Goldfish</option>
+                <option value="college" selected>學院</option>
+                <option value="information">資電學院</option>
+                <option value="created">創能學院</option>
+                <option value="normal">通識中心</option>
             </select>
             <select name="pets">
-                <option value="">請選擇你最愛的寵物</option>
-                <option value="dog">Dog</option>
-                <option value="cat" selected>Cat</option>
-                <option value="hamster">Hamster</option>
-                <option value="parrot">Parrot</option>
-                <option value="spider" disabled>Spider</option>
-                <option value="goldfish">Goldfish</option>
+                <option value="department" selected>系所</option>
+                <option value="computer">資訊系</option>
+                <option value="electronic">電子系</option>
+                <option value="Electrical">電機系</option>
             </select>
             <select name="pets">
-                <option value="">請選擇你最愛的寵物</option>
-                <option value="dog">Dog</option>
-                <option value="cat" selected>Cat</option>
-                <option value="hamster">Hamster</option>
-                <option value="parrot">Parrot</option>
-                <option value="spider" disabled>Spider</option>
-                <option value="goldfish">Goldfish</option>
+                <option value="class" selected>班級</option>
+                <option value="2-4">資訊二丁</option>
+                <option value="3-4">資訊三丁</option>
+                <option value="5-4">資訊四丁</option>
             </select>
-            <button type="button">我是按鈕</button>
+            <button type="button" class="query-button">查詢</button>
         </div>
-
-        <table BORDER="2" align=center>
-            <caption>標題：模擬課表</caption>
-            <tr>
-                <td>節次/星期</td>
-                <td>星期一</td>
-                <td>星期二</td>
-                <td>星期三</td>
-                <td>星期四</td>
-                <td>星期五</td>
-            </tr>
-            <tr>
-                <td>第一節</td>
-                <td>通識教育</td>
-                <td>  </td>
-                <td>  </td>
-                <td>微積分</td>
-                <td>線性代數</td>
-            </tr>
-            <tr>
-                <td>第二節</td>
-                <td>通識教育</td>
-                <td>離散數學</td>
-                <td>英文(一)</td>
-                <td>微積分</td>
-                <td>線性代數</td>
-            </tr>
-            <tr>
-                <td>第三節</td>
-                <td></td>
-                <td>離散數學</td>
-                <td>英文(一)</td>
-                <td>微積分</td>
-                <td>線性代數</td>
-            </tr>
-            <tr>
-                <td>第四節</td>
-                <td> </td>
-                <td>體育(一)</td>
-                <td>計算機概論</td>
-                <td>數位邏輯設計</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>第五節</td>
-                <td></td>
-                <td>體育(一)</td>
-                <td>計算機概論</td>
-                <td>數位邏輯設計</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>第六節</td>
-                <td></td>
-                <td></td>
-                <td>計算機概論</td>
-                <td>數位邏輯設計</td>
-                <td>韻律教學法</td>
-            </tr>
-                <td>第七節</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>韻律教學法</td>
-            </tr>
-            <tr>
-        </table>
-
-        <button>已選課表</button>
-        
+        <div class="choose_label">
+            <form action="#">
+                <div class="input-box-stid">
+                    <label>學號:</label>
+                    <input type="text" required>
+                </div>
+            </form>
+            <button type="button" class="querybutton">查詢</button>
+        </div>  
     </section>
     <script src="js/index.js"></script>
 </body>
