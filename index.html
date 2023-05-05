@@ -15,19 +15,63 @@
     <header class="header">
         <div class="mark">
             <img src="mark.svg">
-          </div>
+        </div>
         <a href="#" class="logo">選課系統</a>
     
+        <nav class="navbar">
+            <button class="btnLogin-popup"><img src="account.png"></button>
+        </nav>
+
     </header>
+
     <section class="section">
+        <div class="wrapper">
+            <span class="icon-close">
+                <i class="fa-solid fa-xmark"></i>
+            </span>
+            <div class="logreg-box">
+                <div class="form-box login">
+                    <div class="logreg-title">
+                        <img src="mark.png">
+                        <h2>Login</h2>
+                    </div>
+                    <form action="#">
+                        <div class="input-box">
+                            <span class="icon"><i class="fa-sharp fa-solid fa-graduation-cap"></i></span>
+                            <input type="text" required>
+                            <label>studentID</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                            <input type="password" required>
+                            <label>Password</label>
+                        </div>
+
+                        <div class="remember-forget">
+                            <label><input type="checkbox"> Remember me</label>
+                        </div>
+
+                        <button type="submit" class="btn">Login</button>
+                        
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
     <section class="section">
+    </section>
+    <section class="section">
         <div class="checkout_quary">
-            <h2 id="title1" class="selected" onclick="selectTitle(1) ">依開課系所</h2>
-            <h2 id="title2" onclick="selectTitle(2)">依學號查詢</h2>
+            <h3 id="title1" class="selected" onclick="selectTitle(1) ">依開課系所</h3>
+            <h3 id="title2" class="unselected" onclick="selectTitle(2)">依學號查詢</h3>
         </div>
-        <div class="choose_label">
+
+        <div>
+            <h4 id="chat1" class="choose_label">
             <select name="pets">
                 <option value="" selected>學制</option>
                 <option value="dog">大學部</option>
@@ -53,15 +97,18 @@
                 <option value="5-4">資訊四丁</option>
             </select>
             <button type="button" class="query-button">查詢</button>
-        </div>
-        <div class="choose_label">
+            </h4>
+
+            </div>
+            <h4 id="chat2" class="unchoose_label">
             <form action="#">
                 <div class="input-box-stid">
                     <label>學號:</label>
                     <input type="text" required>
+                    <button type="button">查詢</button>
                 </div>
             </form>
-            <button type="button" class="querybutton">查詢</button>
+            </h4>
         </div>  
     </section>
     <script src="js/index.js"></script>
