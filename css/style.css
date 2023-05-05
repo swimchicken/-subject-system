@@ -104,7 +104,7 @@ body{
 }
 
 .section {
-    min-height: 5vh;
+    min-height: 10vh;
     background-size: cover;
     background-position: center;
 
