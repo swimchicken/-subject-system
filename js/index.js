@@ -19,6 +19,19 @@ btnPopup.onclick = () => {
     wrapper.classList.add("active-popup");
 }
 
+
+document.querySelector('input[type="text"]').value = '';
+document.querySelector('input[type="password"]').value = '';
+
+function logout() {
+    localStorage.removeItem('authToken'); // 替換 'authToken' 為實際用於存儲令牌的鍵名稱
+    document.querySelector('input[type="text"]').value = '';
+    document.querySelector('input[type="password"]').value = '';
+    // 在此添加其他清除用戶會話信息的代碼，例如清除 cookie 或重定向到登錄頁面等
+}
+
+
+
 const iconclose = document.querySelector(".icon-close");
 
 iconclose.onclick = () => {
