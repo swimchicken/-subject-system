@@ -1,0 +1,486 @@
+/**選用字形 --> 思源宋體*/
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Nunito:ital@0;1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Lexend', sans-serif;
+}
+
+
+:root {
+    --bg-color: #FFFFFF;
+    --text-color: #C7ABAB;
+    --main-color: #7D212A;
+    --white-color: #FFFFFF;
+    --nav-color: #4E6E81;
+    --shadow-color: rgb(0,0,0,.2);
+
+}
+
+
+.dark-mode{
+    --bg-color:#2C2C2C;
+    --test-color:#ECECEC;
+    --main-color:#A92230;
+    --shadow-color: rgb(0,0,0,.7);
+}
+
+#darkmode-icon{
+    font-size: 3.5rem;
+    color: var(--white-color);
+    cursor: pointer; 
+    padding-right: 10px;
+}
+
+.fa-user{
+    color: var(--white-color);
+    width: 50%;
+    height: 50%;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    background: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+}
+
+.logo{
+    width: 500;
+    float:left;
+}
+.logo img{
+    display: inline-block;
+    width: 70%;
+    margin-left: 0;
+}
+
+
+.navbar{
+    text-decoration: none;
+}
+
+.navbar .btnLogin-popup{
+    position: relative;
+    background: transparent;
+    border: none;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+
+
+.navbar .btnLogin-popup i{
+    width: 4rem;
+    height: 4rem;
+    font-size: 3.5rem;
+    margin-left: 3rem;
+}
+
+/*login 事件前*/
+
+.navbar .btnLogin-popup::before{  
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    opacity: .85;
+
+}
+
+.section {
+    min-height: 10vh;
+    background-size: cover;
+    background-position: center;
+    margin-top: 30px;
+
+}
+
+.wrapper{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 100%;
+    background: var(--white-color);
+    backdrop-filter: blur(15px);
+    box-shadow: -1px 0 10px var(--shadow-color);
+    border-left: 2px solid rgba(255, 255, 255, .1);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.wrapper.active-popup{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.icon-close{
+    position: absolute;
+    width: 45px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    height: 45px;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+}
+
+.icon-close i{
+    font-size: 32px;
+    color: var(--text-color)
+}
+
+.wrapper .logreg-box{
+    width: 100%;
+}
+
+
+
+.logreg-box .logreg-title{
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--main-color);
+}
+
+.logreg-title h2{
+    font-size: 32px;
+
+}
+
+.logreg-title p{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.logreg-box .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    border-bottom: 2px solid var(--main-color);
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 500;
+    padding-right: 25px;
+    background: transparent;
+
+}
+
+.input-box label{
+    position: absolute;
+    left: 0;
+    font-size: 16px;
+    color: var(--main-color);
+    font-weight: 500;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: .5s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+
+
+.input-box .icon{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 19px;
+    transform: translateY(-50%);
+    color: var(--bg-color);
+}
+
+.logreg-box .remember-forget{
+    font-size: 14.5px;
+    color: var(--main-color);
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.remember-forget label input{
+    accent-color: var(--bg-color);
+    margin-right: 3px;
+}
+
+.remember-forget a{
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+.remember-forget a:hover{
+    text-decoration: underline;
+}
+
+.logreg-box .btn{
+    width: 100%;
+    height: 45px;
+    background: var(--bg-color);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.logreg-box .logreg-link {
+    font-size: 14.5px;
+    color: var(--bg-color);
+    text-align: center;
+    font-weight: 500;
+
+    margin: 25px 0 15px;
+
+}
+
+
+.section .checkout_quary h3{
+    font-size: 16px;
+    display: inline-block;
+    padding: 6px;
+    margin: 2rem 3rem;
+    cursor: pointer;
+}
+
+.section form{
+    margin: 0;
+}
+
+
+.checkout_quary .selected{
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+}
+
+.unselected{
+    color: var(--text-color);
+}
+
+
+.section .choose_label select{
+    width: 250px;
+    height: 60px;
+    left: 75px;
+    top: 200px;
+    background: var(--main-color);
+    opacity: 0.7;
+    border-radius: 15px;
+    margin: 1rem 1rem;
+    font-weight: 700;
+    font-size: 17px;
+    align-items: center;
+    margin-left: 40px;
+    text-align: center;
+    justify-content: center;
+}
+
+.section .choose_label select option{
+    color: var(--main-color);
+    background: var(--text-color);
+    align-items: center;
+    position: absolute;
+}
+
+.section .choose_label button{
+    display: inline-block;
+    cursor: pointer;
+    width: 180px;
+    height: 50px;
+    margin: 2rem 3rem;
+    border-radius: 15px;
+    background: var(--main-color);
+    color: var(--white-color);
+
+}
+.section .choose_label{
+    border-bottom: 1px solid var(--main-color);
+}
+.section .checkout_quary h4{
+    display: inline-block;
+    padding: 6px;
+    margin: 2rem 3rem;
+    cursor: pointer;
+    
+    
+}
+
+.section .choose_option select{
+    margin-left: 3rem;
+}
+
+.section .choose_option select option{
+    align-items: center;
+    text-align: center;
+    
+    
+}
+
+.input-box-stid{
+    margin-top: 0;
+    align-items: center;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+}
+
+.unchoose_label{
+    visibility:hidden;
+}
+
+.input-box-stid input{
+    color:#0b061f;
+    width:400px;
+    height:40px;
+    margin-left: 25px;
+    padding-left: 10px;
+    background: #F8F3F4;
+    border-radius: 20px;
+}
+
+.curriculum{
+    position: relative;  
+    left: 50%;
+    transform: translate(-50%);
+}
+.section2{
+    margin: 0 8rem;
+}
+
+
+.section2 button{
+    color: rgb(139, 29, 40);
+    display: inline-block;
+    font-style:inherit;
+    font-size: 24px;
+    padding-bottom: 25%;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border-style: outset;
+    border-color:#e60c37;
+    background-color:#f5f5f500;
+}
+.section2 button:hover{
+    color: #F5F5F5;
+    border-style: inset;
+    background-color: rgb(170, 38, 51);
+}
+
+.section2 table{
+    border-collapse: collapse;
+    font-size: 15px;
+    width: 100%;
+}
+
+.section2 table,td, th {
+    
+    text-align: left;
+    padding: 6px;
+    padding-left: 20px;
+    height: 60px;
+   }
+
+.section2 tr:hover{
+    background-color: #eed2ce76;
+}
+
+.SelectedTimeTable{
+    color: var(--white-color);
+    padding: 1.8rem;
+    align-items: center;
+    display: flex;
+    background-color: #8a1111;
+    position: fixed;
+    border-radius: 30px;
+    box-shadow: 2px 2px 3px var(--shadow-color);
+    bottom: 2%;
+    right: 1%;
+    width: 12rem;
+    height: 6rem;
+    z-index: 999;
+    
+    font-size: 15px;
+}
+
+.SelectedTimeTable i{
+    font-size: 15px;
+    margin-right: 5px;
+}
+.subject-class{
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+    background-color: var(--main-color);
+	width: 40%;
+	height: 100%;
+	position: fixed;
+    max-width: 100%;
+    overflow-x: auto;
+	top: 0;
+	right: 0;
+	display: none;
+
+}
+.subject-class table{
+    margin: 1rem;
+}
+
+.subject-class table thead{
+    color: var(--text-color);
+}
+
+.subject-class table tbody{
+    color: var(--text-color);
+    justify-content: center;
+
+}
+
+
+
+
