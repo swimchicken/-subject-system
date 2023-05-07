@@ -15,10 +15,9 @@
 
 :root {
     --bg-color: #FFFFFF;
-    --text-color: #121212;
-    --main-color: #F9DBBB;
+    --text-color: #C7ABAB;
+    --main-color: #7D212A;
     --white-color: #FFFFFF;
-    --key-color:#F05454;
     --nav-color: #4E6E81;
     --shadow-color: rgb(0,0,0,.2);
 
@@ -26,11 +25,24 @@
 
 
 .dark-mode{
-    --bg-color:#0b061f;
-    --test-color:#fdfdfd;
+    --bg-color:#2C2C2C;
+    --test-color:#ECECEC;
+    --main-color:#A92230;
     --shadow-color: rgb(0,0,0,.7);
 }
 
+#darkmode-icon{
+    font-size: 3.5rem;
+    color: var(--white-color);
+    cursor: pointer; 
+    padding-right: 10px;
+}
+
+.fa-user{
+    color: var(--white-color);
+    width: 50%;
+    height: 50%;
+}
 html{
     font-size: 62.5%;
     overflow-x: hidden;
@@ -47,19 +59,19 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 100px;
-    background: #7D212A;
+    padding: 20px 40px;
+    background: var(--main-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 999;
 }
 
-.mark{
+.logo{
     width: 500;
     float:left;
 }
-.mark img{
+.logo img{
     display: inline-block;
     width: 70%;
     margin-left: 0;
@@ -71,19 +83,19 @@ body{
 }
 
 
-
 .navbar .btnLogin-popup{
     position: relative;
     background: transparent;
     border: none;
-    font-weight: 500;
+    font-weight: 300;
     cursor: pointer;
 }
 
 .navbar .btnLogin-popup i{
     width: 4rem;
     height: 4rem;
-    font-size: 4rem;
+    font-size: 3.5rem;
+    margin-left: 3rem;
 }
 
 /*login 事件前*/
@@ -103,7 +115,7 @@ body{
     min-height: 10vh;
     background-size: cover;
     background-position: center;
-
+    margin-top: 30px;
 
 }
 
@@ -111,9 +123,9 @@ body{
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
+    width: 450px;
     height: 100%;
-    background: #FFFFFF;
+    background: var(--white-color);
     backdrop-filter: blur(15px);
     box-shadow: -1px 0 10px var(--shadow-color);
     border-left: 2px solid rgba(255, 255, 255, .1);
@@ -138,7 +150,7 @@ body{
     right: 0;
     cursor: pointer;
     height: 45px;
-    background: rgba(0,0,0,0.5);
+    background: var(--bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -147,19 +159,11 @@ body{
 
 .icon-close i{
     font-size: 32px;
-    color: #000000;
+    color: var(--text-color)
 }
 
 .wrapper .logreg-box{
-    position: relative; 
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 357px;
-    height: 454px;
-    border-style:solid;
-    border-width:1px; border-style:solid;
-    border-radius: 10px;
+    width: 100%;
 }
 
 
@@ -167,7 +171,7 @@ body{
 .logreg-box .logreg-title{
     text-align: center;
     margin-bottom: 40px;
-    color: var(--text-color);
+    color: var(--main-color);
 }
 
 .logreg-title h2{
@@ -175,10 +179,9 @@ body{
 
 }
 
-.logreg-title img{
-    background: block;
-    width: 72px;
-    height: 72px;
+.logreg-title p{
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .logreg-box .input-box{
@@ -186,7 +189,7 @@ body{
     width: 100%;
     height: 50px;
     margin: 30px 0;
-    border-bottom: 2px solid #F5F5F5;
+    border-bottom: 2px solid var(--main-color);
 }
 
 .input-box input{
@@ -206,7 +209,7 @@ body{
     position: absolute;
     left: 0;
     font-size: 16px;
-    color: rgba(0,0,0,0.5);;
+    color: var(--main-color);
     font-weight: 500;
     top: 50%;
     transform: translateY(-50%);
@@ -230,7 +233,7 @@ body{
 
 .logreg-box .remember-forget{
     font-size: 14.5px;
-    color: rgba(0,0,0);
+    color: var(--main-color);
     font-weight: 500;
     margin: -15px 0 15px;
     display: flex;
@@ -248,12 +251,13 @@ body{
     text-decoration: none;
 }
 
+.remember-forget a:hover{
+    text-decoration: underline;
+}
 
 .logreg-box .btn{
-    position: absolute;
-    left: 35%;
-    width: 117px;
-    height: 43px;
+    width: 100%;
+    height: 45px;
     background: var(--bg-color);
     border: none;
     outline: none;
@@ -275,6 +279,7 @@ body{
 
 }
 
+
 .section .checkout_quary h3{
     font-size: 16px;
     display: inline-block;
@@ -283,42 +288,58 @@ body{
     cursor: pointer;
 }
 
+.section form{
+    margin: 0;
+}
+
 
 .checkout_quary .selected{
-    color: #7D212A;
-    border-bottom: 2px solid #7D212A;
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
 }
 
 .unselected{
-    color: #C7ABAB;
+    color: var(--text-color);
 }
 
 
 .section .choose_label select{
-    width: 311px;
-    height: 83px;
+    width: 250px;
+    height: 60px;
     left: 75px;
     top: 200px;
-    background: #F8F3F4;
-    color: #0b061f;
+    background: var(--main-color);
+    opacity: 0.7;
     border-radius: 15px;
     margin: 1rem 1rem;
-    display: inline-block;
-    
+    font-weight: 700;
+    font-size: 17px;
+    align-items: center;
+    margin-left: 40px;
+    text-align: center;
+    justify-content: center;
 }
+
+.section .choose_label select option{
+    color: var(--main-color);
+    background: var(--text-color);
+    align-items: center;
+    position: absolute;
+}
+
 .section .choose_label button{
     display: inline-block;
     cursor: pointer;
-    width: 200px;
-    height: 72px;
-    margin: 1rem 5rem;
+    width: 180px;
+    height: 50px;
+    margin: 2rem 3rem;
     border-radius: 15px;
-    background: #7D212A;
-    color: #EEF1FF;
+    background: var(--main-color);
+    color: var(--white-color);
 
 }
 .section .choose_label{
-    border-bottom: 1px solid #7D212A;
+    border-bottom: 1px solid var(--main-color);
 }
 .section .checkout_quary h4{
     display: inline-block;
@@ -329,15 +350,37 @@ body{
     
 }
 
+.section .choose_option select{
+    margin-left: 3rem;
+}
+
+.section .choose_option select option{
+    align-items: center;
+    text-align: center;
+    
+    
+}
+
+.input-box-stid{
+    margin-top: 0;
+    align-items: center;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+}
+
 .unchoose_label{
     visibility:hidden;
 }
 
 .input-box-stid input{
     color:#0b061f;
-    width:622px;
-    height:83px;
+    width:400px;
+    height:40px;
+    margin-left: 25px;
+    padding-left: 10px;
     background: #F8F3F4;
+    border-radius: 20px;
 }
 
 .curriculum{
@@ -345,3 +388,98 @@ body{
     left: 50%;
     transform: translate(-50%);
 }
+.section2{
+    margin: 0 8rem;
+}
+
+
+.section2 button{
+    color: rgb(139, 29, 40);
+    display: inline-block;
+    font-style:inherit;
+    font-size: 24px;
+    padding-bottom: 25%;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border-style: outset;
+    border-color:#e60c37;
+    background-color:#f5f5f500;
+}
+.section2 button:hover{
+    color: #F5F5F5;
+    border-style: inset;
+    background-color: rgb(170, 38, 51);
+}
+
+.section2 table{
+    border-collapse: collapse;
+    font-size: 15px;
+    width: 100%;
+}
+
+.section2 table,td, th {
+    
+    text-align: left;
+    padding: 6px;
+    padding-left: 20px;
+    height: 60px;
+   }
+
+.section2 tr:hover{
+    background-color: #eed2ce76;
+}
+
+.SelectedTimeTable{
+    color: var(--white-color);
+    padding: 1.8rem;
+    align-items: center;
+    display: flex;
+    background-color: #8a1111;
+    position: fixed;
+    border-radius: 30px;
+    box-shadow: 2px 2px 3px var(--shadow-color);
+    bottom: 2%;
+    right: 1%;
+    width: 12rem;
+    height: 6rem;
+    z-index: 999;
+    
+    font-size: 15px;
+}
+
+.SelectedTimeTable i{
+    font-size: 15px;
+    margin-right: 5px;
+}
+.subject-class{
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+    background-color: var(--main-color);
+	width: 40%;
+	height: 100%;
+	position: fixed;
+    max-width: 100%;
+    overflow-x: auto;
+	top: 0;
+	right: 0;
+	display: none;
+
+}
+.subject-class table{
+    margin: 1rem;
+}
+
+.subject-class table thead{
+    color: var(--text-color);
+}
+
+.subject-class table tbody{
+    color: var(--text-color);
+    justify-content: center;
+
+}
+
+
+
+

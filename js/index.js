@@ -1,4 +1,15 @@
 
+/*深色模式function(),上次沒做到的這次做到了!!*/
+let darkmode = document.querySelector('#darkmode-icon');
+
+darkmode.onclick = () => {
+    /*這裡有bug尚未找到,不清楚如何替換icon,但由於錯誤的話整個js都無法啟動,所以
+    先保留下次修理 */
+    darkmode.classList.toggle('fa-sun-bright');
+    document.body.classList.toggle('dark-mode');
+}
+
+
 
 const wrapper = document.querySelector(".wrapper");
 const btnPopup = document.querySelector(".btnLogin-popup");
@@ -31,4 +42,29 @@ function selectTitle(titleNum){
         chat2.classList.remove("unchoose_label");
 }
 
+
+
+
+
+
+
+var displayArea = document.getElementById('displayArea');
+
+function hideDisplayArea(event) {
+    if (!displayArea.contains(event.target)) {
+        displayArea.style.display = 'none';
+    }
+}
+
+document.addEventListener('click', hideDisplayArea);
+
+
+
+function showDisplayArea() {
+    if (displayArea.style.display === 'none') {
+      setTimeout(function() {
+        displayArea.style.display = 'block';
+      }, 100);
+    }
+}
 
