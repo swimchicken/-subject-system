@@ -330,11 +330,11 @@ body{
 
 .section .choose_label select{
     width: 250px;
-    height: 60px;
+    height: 55px;
     left: 75px;
     top: 200px;
     background: var(--main-color);
-    opacity: 0.7;
+    
     border-radius: 15px;
     margin: 1rem 1rem;
     font-weight: 700;
@@ -343,6 +343,7 @@ body{
     margin-left: 40px;
     text-align: center;
     justify-content: center;
+    color: #F5F5F5;
 }
 
 .section .choose_label select option{
