@@ -34,8 +34,8 @@ def reg(request):
 
         for i in results:
             student_id, class_name, week_day, start_time, end_time = i
-            week_day = int(week_day)  # 将星期转换成从0开始的索引
-            start_time = int(start_time)  # 将节次转换成从0开始的索引
+            week_day = int(week_day)  # 將星期轉換成從0開始的索引
+            start_time = int(start_time)  # 將節次轉換成從0開始的索引
             end_time = int(end_time)
             schedule[week_day][start_time:end_time + 1] = [class_name] * (end_time - start_time + 1)
 
