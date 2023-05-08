@@ -1,19 +1,25 @@
 from django.shortcuts import render
 
+import MySQLdb
+from django.conf import settings
+from django.shortcuts import render
+
+import pymysql
+from django.conf import settings
+
 
 def index(request):
-    context = {"name": "swimchicken"}
+    conn = pymysql.connect(
+        host='127.0.0.1',
+        user='root',
+        password='37070378',
+        db='django',
+        port=3306
+    )
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM student")
+    results = cursor.fetchall()
+    cursor.close()
+    conn.close()
 
-    view_list = ["課程1", "課程2", "課程3"]
-    context["view_list"] = view_list[1]
-
-    view_dic = {"name": "swimchicken", "age": 28}
-    context["view_dic"] = view_dic
-
-    score = 89
-    context["score"] = score
-
-    enpty_list = []
-    context["enpty_list"] = enpty_list
-
-    return render(request, "index.html", context)
+    return render(request, 'index.html', {'results': results})

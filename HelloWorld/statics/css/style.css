@@ -353,13 +353,13 @@ body{
 
 .section .choose_option select{
     margin-left: 3rem;
+    color: var(--white-color);
 }
 
 .section .choose_option select option{
     align-items: center;
     text-align: center;
-    
-    
+
 }
 
 .input-box-stid{
