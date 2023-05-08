@@ -23,10 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("index/", views.index),
     path('', views.index, name='index'),
-    path("result/", views.result, name="result"),
-
+    path('reg/', views.reg, name='check'),
     # re_path(r'db/add$', testdb.add),
     # path("db/getall/", testdb.getAll),
     # re_path(r'db/update$',testdb.update),
-    # path("testmodel/result/", result)
 ]
