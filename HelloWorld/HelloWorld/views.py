@@ -9,9 +9,9 @@ from django.conf import settings
 # from .models import Class, ClassTime
 
 
-def index(request):
+def reg(request):
     if request.method == 'POST':
-        student_id = request.POST.get('student_id')
+        student_id = request.POST.get('studentID')
         conn = pymysql.connect(
             host='127.0.0.1',
             user='root',
@@ -24,6 +24,8 @@ def index(request):
                        "Class_time.End_Time FROM Take JOIN Class ON Take.Class_ID = Class.Class_ID JOIN Class_time ON "
                        "Take.Class_ID = Class_time.Class_ID WHERE Student_ID = %s;", student_id)
         results = cursor.fetchall()
+
+
         cursor.close()
         conn.close()
 
@@ -47,12 +49,7 @@ def index(request):
 
 
 def quary(request):
-    conn = pymysql.connect(
-        host='127.0.0.1',
-        password='37070378',
-        db='django',
-        port=3306
-    )
+
     conn = pymysql.connect(
         host='127.0.0.1',
         user='root',
@@ -70,8 +67,7 @@ def quary(request):
     return render(request, 'index.html', {'results': results})
 
 
-def reg(request):
+def index(request):
     if request.method == 'POST':
         studentID = request.POST.get('studentID')
-    print(studentID)
     return render(request, 'index.html')
