@@ -50,7 +50,7 @@ html{
 
 body{
     background-color: var(--bg-color);
-    color: var(--text-color);
+    color:#797979;
 }
 
 
@@ -453,7 +453,8 @@ body{
    }
 
 .section2 tr:hover{
-    background-color: #eed2ce76;
+    color: #0b061f;
+    background-color: #ffcfc7b9;
 }
 
 .SelectedTimeTable{
