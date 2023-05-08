@@ -80,36 +80,36 @@
 
 
         <h4 id="chat1" class="choose_label">
-            <select name="uni">
-                <option value="" >學制</option>
-                <option value="dog">大學部</option>
-                <option value="cat">碩士班</option>
-                <option value="hamster">博士班</option>
-            </select>
-            <select name="bui">
-                <option value="college" >學院</option>
-                <option value="information">資電學院</option>
-                <option value="created">創能學院</option>
-                <option value="normal">通識中心</option>
-            </select>
-            <select name="dep">
-                <option value="department" >系所</option>
-                <option value="computer">資訊系</option>
-                <option value="electronic">電子系</option>
-                <option value="Electrical">電機系</option>
-            </select>
-            <select name="cla">
-                <option value="class">班級</option>
-                <option value="2-4">資訊二丁</option>
-                <option value="3-4">資訊三丁</option>
-                <option value="5-4">資訊四丁</option>
-            </select>
-            <button type="button" class="query-button">查詢</button>
+            <form>
+                <select name="uni">
+                    <option value="" >學制</option>
+                    <option value="dog">大學部</option>
+                    <option value="cat">碩士班</option>
+                    <option value="hamster">博士班</option>
+                </select>
+                <select name="bui">
+                    <option value="college" >學院</option>
+                    <option value="information">資電學院</option>
+                    <option value="created">創能學院</option>
+                    <option value="normal">通識中心</option>
+                </select>
+                <select name="dep">
+                    <option value="department" >系所</option>
+                    <option value="資訊工程">資訊工程</option>
+                    <option value="電子工程">電子工程</option>
+                    <option value="電機工程">電機工程</option>
+                </select>
+                <select name="cla">
+                    <option value="class">班級</option>
+                    <option value="二年級">二年級</option>
+                    <option value="三年級">三年級</option>
+                    <option value="四年級">四年級</option>
+                </select>
+                <button type="submit" class="query-button">查詢</button>
+
+            </form>
+
         </h4>
-
-
-
-
         <h4 id="chat2" class="unchoose_label">
         <form action="#" action="{% url 'check' %}">
             <div class="input-box-stid">
@@ -120,9 +120,6 @@
         </form>
         </h4>
     </section>
-
-
-
     <section class="section2">
         <div>
             <table>
@@ -220,6 +217,8 @@
             </table>
         </div>
     </section>
+    {'a' : range(5) }
+    {'b' : range(15) }
 
     <div class="subject-class" id="displayArea">
         <table class="table table-hover  table-responsive">
@@ -234,14 +233,15 @@
                 </tr>
             </thead>
             <tbody>
+            {% load humanize %}
+                {% for i in b %}
                 <tr>
-                    <th scope="row">1</th>
-                    <td>{{ results.0.0 }}</td>
-                    <td>{{row.column2}}</td>
-                    <td>{{row.column3}}</td>
-                    <td>{{class03}}</td>
-                    <td>{{class04}}</td>
+                    <th scope="row">{{ i }}</th>
+                    {% for j in a %}
+                        <td>{{ schedule.j.i }}</td>
+                    {% endfor %}
                 </tr>
+                {% endfor %}
                 <tr>
                     <th scope="row">2</th>
                     <td>{{class10}}</td>

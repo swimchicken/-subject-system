@@ -18,13 +18,18 @@ from django.contrib import admin
 from django.urls import path, include
 from django.urls import re_path
 from . import views
+from .views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("index/", views.index),
     path('', views.index, name='index'),
+    path("quary/", views.quary, name="quary"),
+    path('query_schedule/', index, name='query_schedule'),
+    # ('result/', views.result),
     path('reg/', views.reg, name='check'),
     # re_path(r'db/add$', testdb.add),
     # path("db/getall/", testdb.getAll),
     # re_path(r'db/update$',testdb.update),
+    # path("testmodel/result/", result)
 ]
