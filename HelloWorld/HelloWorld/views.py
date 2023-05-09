@@ -30,19 +30,24 @@ def reg(request):
         cursor.close()
         conn.close()
 
-        data = {}
+        schedule = [[None] * 15 for _ in range(5)]
+        weekdays = ['一', '二', '三', '四', '五']
 
-        for row in results:
-            class_name = row[1]
-            week_day = row[2]
-            start_time = row[3]
-            end_time = row[4]
-            for i in range(5):
-                for j in range(14):
-                    if i == start_time and j == end_time:
+        for i in results:
+            Class_Name,Week_Day,Start_Time,End_Time, End_Time = i
 
+            Week_Day = int(Week_Day)  # 將星期轉換成從0開始的索引
+            Start_Time = int(Start_Time)  # 將節次轉換成從0開始的索引
+            End_Time = int(End_Time)
+            schedule[Week_Day][Start_Time:End_Time + 1] = [Class_Name] * (End_Time - Start_Time + 1)
 
-        return render(request, 'index.html', {"results": results})
+            
+        
+        context = {
+            'info' : Class_Name + '\n' + weekdays + schedule
+            }
+
+        return render(request, 'index.html', {"results": context})
     else:
         return redirect("index.html")
 
