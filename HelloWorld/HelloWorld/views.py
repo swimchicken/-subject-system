@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import MySQLdb
 from django.conf import settings
 from django.shortcuts import render
 import pymysql
 from django.conf import settings
+from itertools import groupby
 
 
 # from .models import Class, ClassTime
@@ -11,7 +12,7 @@ from django.conf import settings
 
 def reg(request):
     if request.method == 'POST':
-        student_id = request.POST.get('studentID')
+        studentID = request.POST.get('studentID')
         conn = pymysql.connect(
             host='127.0.0.1',
             user='root',
@@ -22,47 +23,51 @@ def reg(request):
         cursor = conn.cursor()
         cursor.execute("SELECT Take.Student_ID, Class.Class_Name, Class_time.Week_Day, Class_time.Start_TIme, "
                        "Class_time.End_Time FROM Take JOIN Class ON Take.Class_ID = Class.Class_ID JOIN Class_time ON "
-                       "Take.Class_ID = Class_time.Class_ID WHERE Student_ID = %s;", student_id)
+                       "Take.Class_ID = Class_time.Class_ID WHERE Student_ID = %s;", studentID)
         results = cursor.fetchall()
 
 
         cursor.close()
         conn.close()
 
-        schedule = [[None] * 15 for _ in range(5)]
-        weekdays = ['一', '二', '三', '四', '五']
+        data = {}
 
-        for i in results:
-            student_id, class_name, week_day, start_time, end_time = i
-            week_day = int(week_day)  # 將星期轉換成從0開始的索引
-            start_time = int(start_time)  # 將節次轉換成從0開始的索引
-            end_time = int(end_time)
-            schedule[week_day][start_time:end_time + 1] = [class_name] * (end_time - start_time + 1)
+        for row in results:
+            class_name = row[1]
+            week_day = row[2]
+            start_time = row[3]
+            end_time = row[4]
+            for i in range(5):
+                for j in range(14):
+                    if i == start_time and j == end_time:
 
-        context = {'schedule': schedule, 'weekdays': weekdays}
-        return render(request, 'index.html', context)
+
+        return render(request, 'index.html', {"results": results})
     else:
-        schedule = None
-        weekdays = ['一', '二', '三', '四', '五']
-        context = {'schedule': schedule, 'weekdays': weekdays}
-        return render(request, 'index.html', context)
+        return redirect("index.html")
 
 
-def quary(request):
+'''    
+ data = {}
+        for row in results:
+            class_name = row[1]
+            week_day = row[2]
+            start_time = row[3]
+            end_time = row[4]
 
-    conn = pymysql.connect(
-        host='127.0.0.1',
-        user='root',
-        password='37070378',
-        db='django',
-        port=3306
-    )
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM student")
+            if week_day not in data:
+                data[week_day] = {}
+            for i in range(14):
+                if i not in data[week_day]:
+                    data[week_day][i] = {'class_name': '', 'start_time': '', 'end_time': ''}
 
-    results = cursor.fetchall()
-    cursor.close()
-    conn.close()
+            for i in range(start_time, end_time):
+                data[week_day][i]['class_name'] = class_name
+                data[week_day][i]['start_time'] = start_time
+                data[week_day][i]['end_time'] = end_time
+
+        cursor.close()
+        conn.close()
 
     return render(request, 'index.html', {'results': results})
 
@@ -114,3 +119,6 @@ def index(request):
             }
         return render(request, 'index.html', context)
     return render(request, 'index.html')
+    
+    
+    '''

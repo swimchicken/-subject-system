@@ -111,7 +111,7 @@
 
         </h4>
         <h4 id="chat2" class="unchoose_label">
-        <form action="#" action="{% url 'check' %}">
+        <form action="#" action="{% url 'check' %}" method="POST">
             <div class="input-box-stid">
                 {% csrf_token %}
                 <input type="text" name="studentID" required placeholder="學號:">
@@ -234,21 +234,24 @@
             </thead>
             <tbody>
             {% load humanize %}
-                {% for i in b %}
+                {% for i in 0|range:14 %}
                 <tr>
-                    <th scope="row">{{ i }}</th>
-                    {% for j in a %}
-                        <td>{{ schedule.j.i }}</td>
-                    {% endfor %}
+                    <td>{{ i+1 }}</td>
+                    <td>{{ i*2+1 }} - {{ i*2+2 }}</td>
+                    <td>{{ data.一.get(i).class_name }}</td>
+                    <td>{{ data.二.get(i).class_name }}</td>
+                    <td>{{ data.三.get(i).class_name }}</td>
+                    <td>{{ data.四.get(i).class_name }}</td>
+                    <td>{{ data.五.get(i).class_name }}</td>
                 </tr>
                 {% endfor %}
                 <tr>
                     <th scope="row">2</th>
-                    <td>{{class10}}</td>
-                    <td>{{class11}}</td>
-                    <td>{{class12}}</td>
-                    <td>{{class13}}</td>
-                    <td>{{class14}}</td>
+                    <td>{{results}}</td>
+                    <td>{{schedule.0}}</td>
+                    <td>{{results}}</td>
+                    <td>{{results}}</td>
+                    <td>{{results}}</td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
